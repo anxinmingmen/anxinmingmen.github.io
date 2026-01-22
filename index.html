@@ -1,113 +1,71 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<style>
-  /* 全局图片自适应，不拉伸 */
-  img {
-    max-width: 100%; /* 不超容器宽度 */
-    height: auto;    /* 高度按比例自动算 */
-    display: block;  /* 消除图片底部间隙 */
-    margin: 10px auto; /* 上下留空10px，水平居中 */
-  }
-  /* 若要固定图片高度，用下面这个（选一种） */
-  .fixed-height-img {
-    height: 300px;    /* 固定高度300px，可改 */
-    width: auto;      /* 宽度按比例 */
-    object-fit: cover;/* 填满容器，裁多余部分，不拉伸 */
-  }
-</style>
-</head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>佛山市南海安鑫名门门窗工程 - 门窗定制批发专家</title>
+    <title>安鑫名门 - 别墅入户大门完工案例</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "佛山市南海安鑫名门",
-      "description": "安鑫名门专注佛山本地铝合金门窗、断桥铝系统窗、入户大门、室内门定制，提供上门测量、设计、安装一站式服务",
-      "address": {"@type": "PostalAddress","streetAddress": "佛山市南海区狮山松岗禅碳路新企牌坊正对面","addressLocality": "佛山市南海区","postalCode": "528234","addressCountry": "中国"},
-      "telephone": "18942400582",
-      "openingHours": "Mo-Su 08:30-18:00"
-    }
-    </script>
     <style>
-        .case-card {transition: transform .3s ease; cursor: pointer;}
-        .case-card:hover {transform: translateY(-6px); box-shadow: 0 8px 16px rgba(0,0,0,.1);}
-        .case-img {object-fit: cover; width: 100%; height: 260px; border-radius: 8px; pointer-events: none; user-select: none;}
-        .top-banner-img {width: 100%; height: auto; border-radius: 8px; margin-bottom: 4px; pointer-events: none; user-select: none;}
-        body {background-color: #f9fafb; color: #1f2937;}
+        /* 核心：完整显示图片，不裁剪、不拉伸 */
+        .case-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 整扇门完整呈现，不裁上下左右 */
+            border-radius: 8px;
+            margin-bottom: 6px;
+            pointer-events: none;
+            user-select: none;
+        }
+        /* 统一容器高度，排版整齐，空白处补白更整洁 */
+        .img-box {
+            position: relative;
+            overflow: hidden;
+            height: 420px; /* 可改450px（更大）/380px（更小），按需调整 */
+            background-color: #fff;
+            border: 1px solid #f0f0f0; /* 轻微边框，区分图片区域 */
+        }
+        .img-box::after {content: "安鑫名门"; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 36px; color: #000; opacity: 0.2; font-weight: bold; letter-spacing: 4px; z-index: 10;}
+        .back-btn {transition: all .3s; background-color: #2563eb; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items:center;}
+        .back-btn:hover {background-color: #1d4ed8;}
         * {user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
-        body {pointer-events: auto;}
+        body {background-color: #f9fafb; padding: 0; margin:0;}
     </style>
 </head>
 <body>
-    <nav class="bg-white shadow-md py-4 sticky top-0 z-50">
-        <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
-            <h1 class="text-2xl font-bold text-gray-800">安鑫名门</h1>
-            <div class="space-x-6 md:flex hidden">
-                <a href="#top-banner" class="text-gray-600 hover:text-gray-900 font-medium">首页介绍</a>
-                <a href="#case-list" class="text-gray-600 hover:text-gray-900 font-medium">案例展示</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium">联系方式</a>
-            </div>
-            <a href="tel:18942400582" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hidden md:block"><i class="fa fa-phone mr-1"></i> 立即咨询</a>
-            <button class="md:hidden text-gray-700" id="menuBtn"><i class="fa fa-bars text-xl"></i></button>
-        </div>
-        <div class="md:hidden hidden bg-white shadow-lg px-4 py-2" id="mobileMenu">
-            <a href="#top-banner" class="block py-2 text-gray-600 hover:text-gray-900">首页介绍</a>
-            <a href="#case-list" class="block py-2 text-gray-600 hover:text-gray-900">案例展示</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-gray-900">联系方式</a>
-        </div>
-    </nav>
-
-    <!-- ✅ 置顶最上方：安鑫名门 大标题 + 你的3张宣传图 精准匹配，无多余文字 -->
-<section id="top-banner" class="container mx-auto px-4 py-8">
-    <h2 class="text-4xl font-bold text-center mb-6 text-gray-800">安鑫名门</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <img src="a.jpg" alt="门窗定制批发专家" class="top-banner-img">
-        <div style="display:none"></div>
-        <img src="b.jpg" alt="省钱省心省时" class="top-banner-img">
-        <div style="display:none"></div>
-        <img src="c.jpg" alt="传统采购痛点分析" class="top-banner-img">
+    <div class="container mx-auto px-4 py-6">
+        <a href="../index.html" class="back-btn"><<<i class="fa fa-arrow-left mr-2"></</</i> 返回案例首页</a>
     </div>
-</section>
-
-  <!-- ✅ 宣传图下方：你的14个门窗分类，一个不少，全部匹配 -->
-    <section id="case-list" class="container mx-auto px-4 py-6">
-        <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">门窗完工案例展示</h2>
-        <p class="text-gray-600 text-center mb-8">多款实景完工图 · 按需定制适配不同装修风格</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="./别墅入户大门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="j.jpg" alt="别墅入户大门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">别墅入户大门</h3></a>
-            <a href="./不锈钢入户防盗门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="l.jpg" alt="不锈钢入户防盗门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">不锈钢入户防盗门</h3></a>
-            <a href="./不锈钢室内门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="m.jpg" alt="不锈钢室内门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">不锈钢室内门</h3></a>
-            <a href="./断桥铝窗纱一体/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="h.jpg" alt="断桥铝窗纱一体" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">断桥铝窗纱一体</h3></a>
-            <a href="./封阳台完工案例/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="g.jpg" alt="封阳台完工案例" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">封阳台完工案例</h3></a>
-            <a href="./咖啡色断桥铝平开窗/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="i.jpg" alt="咖啡色断桥铝平开窗" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">咖啡色断桥铝平开窗</h3></a>
-            <a href="./铝合金厨卫平开门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="d.jpg" alt="铝合金厨卫平开门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">铝合金厨卫平开门</h3></a>
-            <a href="./铝合金入户防盗门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="n.jpg" alt="铝合金入户防盗门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">铝合金入户防盗门</h3></a>
-            <a href="./铝合金推拉门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="e.jpg" alt="铝合金推拉门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">铝合金推拉门</h3></a>
-            <a href="./铝木室内门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="f.jpg" alt="铝木室内门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">铝木室内门</h3></a>
-            <a href="./全铝室内门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="k.jpg" alt="全铝室内门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">全铝室内门</h3></a>
-            <a href="./实木室内门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="o.jpg" alt="实木室内门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">实木室内门</h3></a>
-            <a href="./系统门窗/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="p.jpg" alt="系统门窗" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">系统门窗</h3></a>
-            <a href="./锌合金室内门/index.html" class="case-card bg-white rounded-lg shadow p-4"><img src="q.jpg" alt="锌合金室内门" class="case-img"><h3 class="text-xl font-semibold mt-4 text-center">锌合金室内门</h3></a>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">联系我们</h2>
-            <p class="mb-3 text-lg"><i class="fa fa-map-marker mr-2"></i> 地址：佛山市南海区狮山松岗禅碳路新企牌坊正对面</p>
-            <p class="mb-3 text-lg"><i class="fa fa-phone mr-2"></i> 电话：<a href="tel:18942400582" class="text-blue-300 hover:underline">18942400582</a></p>
-            <p class="text-lg"><i class="fa fa-clock-o mr-2"></i> 营业时间：周一至周日 08:30-18:00</p>
-        </div>
-    </section>
-
+    <div class="container mx-auto px-4 py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="img-box"><img src="a.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="b.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="c.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div> 
+        <div class="img-box"><img src="d.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="e.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="f.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="g.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="h.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="i.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="j.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="k.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="l.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <div class="img-box"><img src="m.jpg" alt="安鑫名门 别墅入户大门 完工案例" class="case-img"></div>
+        <!-- 加图：复制上面整行粘贴，改图片名即可 -->
+    </div>
     <script>
-        document.getElementById('menuBtn').addEventListener('click', function() {document.getElementById('mobileMenu').classList.toggle('hidden');});
-        document.addEventListener('contextmenu', function(e) {e.preventDefault();});
+        // 适配不同设备，图片始终完整显示
+        function debounce(func, wait) {let timeout; return function(...args) {clearTimeout(timeout); timeout = setTimeout(() => func(...args), wait);}}
+        const adjustContainers = debounce(() => {
+            const screenWidth = window.innerWidth;
+            const containers = document.querySelectorAll('.img-box');
+            if (screenWidth >= 1024) containers.forEach(c => c.style.height = '420px'); // 电脑端
+            else if (screenWidth >= 640) containers.forEach(c => c.style.height = '380px'); // 平板端
+            else containers.forEach(c => c.style.height = '320px'); // 手机端
+        }, 100);
+        window.addEventListener('resize', adjustContainers);
+        window.addEventListener('load', adjustContainers);
+        // 禁止右键保存
+        document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
