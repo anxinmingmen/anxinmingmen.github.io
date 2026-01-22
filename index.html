@@ -7,11 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* 核心：完整显示图片，不裁剪、不拉伸 */
+        /* 核心：完整显示所有图片（含png格式），不裁剪、不拉伸 */
         .case-img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* 整扇门完整呈现，不裁上下左右 */
+            object-fit: contain; /* 整扇门完整呈现，上下左右不裁剪 */
             border-radius: 8px;
             margin-bottom: 6px;
             pointer-events: none;
@@ -34,7 +34,7 @@
 </head>
 <body>
     <div class="container mx-auto px-4 py-6">
-        <a href="../index.html" class="back-btn"><<i class="fa fa-arrow-left mr-2"></</i> 返回案例首页</a>
+        <a href="../index.html" class="back-btn"><<<i class="fa fa-arrow-left mr-2"></</</i> 返回案例首页</a>
     </div>
     <div class="container mx-auto px-4 py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="img-box"><img src="a.jpg" alt="别墅入户大门案例" class="case-img"></div>
@@ -46,10 +46,46 @@
         <div class="img-box"><img src="g.jpg" alt="别墅入户大门案例" class="case-img"></div>
         <div class="img-box"><img src="h.jpg" alt="别墅入户大门案例" class="case-img"></div>
         <div class="img-box"><img src="i.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="j.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="k.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="l.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="m.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="n.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="o.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="p.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="q.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="r.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="s.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="t.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="u.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="v.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="w.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="x.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="y.jpg" alt="别墅入户大门案例" class="case-img"></div> 
+        <div class="img-box"><img src="z.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="aa.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="bb.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="cc.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="dd.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="ee.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="ff.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="gg.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="hh.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="jj.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="kk.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="ll.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="mm.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="nn.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="oo.jpg" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="pp.png" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="qq.png" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="rr.png" alt="别墅入户大门案例" class="case-img"></div>
+        <div class="img-box"><img src="ss.png" alt="别墅入户大门案例" class="case-img"></div>
+
         <!-- 加图：复制上面整行粘贴，改图片名即可 -->
     </div>
     <script>
-        // 适配不同设备，门始终完整显示
+        // 适配不同设备，图片始终完整显示
         function debounce(func, wait) {let timeout; return function(...args) {clearTimeout(timeout); timeout = setTimeout(() => func(...args), wait);}}
         const adjustContainers = debounce(() => {
             const screenWidth = window.innerWidth;
