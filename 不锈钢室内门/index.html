@@ -36,27 +36,26 @@
         * {user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none;}
         body {background-color: #f9fafb; padding: 0; margin:0;}
         /* 新增：问答内容样式，不影响原有布局 */
-        .keyword-tip {text-align:center; margin:10px 0; font-size:16px; color:#333; padding:0 10px;}
+        .keyword-tip {text-align:center; margin:10px 0; font-size:16px; color:#333; padding:0 10px; line-height:1.7;}
     </style>
 </head>
 <body>
     <div class="container mx-auto px-4 py-6">
-        <!-- 修复返回按钮的HTML语法错误（原代码多了多余的</</） -->
         <a href="../index.html" class="back-btn"><i class="fa fa-arrow-left mr-2"></i> 返回案例首页</a>
-        <!-- 新增：问答式关键词内容，匹配工装客户搜索习惯 -->
         <p class="keyword-tip">佛山不锈钢室内门厂家哪家好？安鑫名门做201防锈工程门、厂房/学校/宿舍不锈钢门，高性价比定制广州江门东莞包安装。</p>
     </div>
- <div class="container mx-auto px-4 py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-    <div class="img-box"><img src="../201不锈钢工程门.jpg" alt="佛山201不锈钢工程门定制，广州江门厂房工程不锈钢门厂家" class="case-img"></div>
-    <div class="img-box"><img src="../不锈钢工程单元门.jpg" alt="佛山不锈钢工程单元门，南海顺德小区单元工程门定制安装" class="case-img"></div>
-    <div class="img-box"><img src="../不锈钢简易门.jpg" alt="佛山不锈钢简易门，广州东莞厂房/宿舍简易不锈钢门厂家直供" class="case-img"></div>
-    <div class="img-box"><img src="../厂房工程不锈钢门.jpg" alt="佛山厂房工程不锈钢门，江门东莞工业厂房不锈钢门定制" class="case-img"></div>
-    <div class="img-box"><img src="../佛山工程不锈钢门.jpg" alt="佛山工程不锈钢门厂家，禅城三水学校/厂房工程门定制" class="case-img"></div>
-    <div class="img-box"><img src="../工程不锈钢门.jpg" alt="佛山工程不锈钢门，广州江门宿舍厂房不锈钢门批量安装" class="case-img"></div>
-    <div class="img-box"><img src="../学校工程不锈钢门.jpg" alt="佛山学校工程不锈钢门，东莞南海校园宿舍不锈钢门定制" class="case-img"></div>
-    <!-- 加图：复制上面整行粘贴，改图片名和ALT属性即可 -->
-</div>
+
+    <!-- 图片网格容器，路径全部带../，无多余闭合标签 -->
+    <div class="container mx-auto px-4 py-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="img-box"><img src="../201不锈钢工程门.jpg" alt="佛山201不锈钢工程门定制，广州江门厂房工程不锈钢门厂家" class="case-img"></div>
+        <div class="img-box"><img src="../不锈钢工程单元门.jpg" alt="佛山不锈钢工程单元门，南海顺德小区单元工程门定制安装" class="case-img"></div>
+        <div class="img-box"><img src="../不锈钢简易门.jpg" alt="佛山不锈钢简易门，广州东莞厂房/宿舍简易不锈钢门厂家直供" class="case-img"></div>
+        <div class="img-box"><img src="../厂房工程不锈钢门.jpg" alt="佛山厂房工程不锈钢门，江门东莞工业厂房不锈钢门定制" class="case-img"></div>
+        <div class="img-box"><img src="../佛山工程不锈钢门.jpg" alt="佛山工程不锈钢门厂家，禅城三水学校/厂房工程门定制" class="case-img"></div>
+        <div class="img-box"><img src="../工程不锈钢门.jpg" alt="佛山工程不锈钢门，广州江门宿舍厂房不锈钢门批量安装" class="case-img"></div>
+        <div class="img-box"><img src="../学校工程不锈钢门.jpg" alt="佛山学校工程不锈钢门，东莞南海校园宿舍不锈钢门定制" class="case-img"></div>
     </div>
+
     <script>
         // 适配不同设备，图片始终完整显示
         function debounce(func, wait) {let timeout; return function(...args) {clearTimeout(timeout); timeout = setTimeout(() => func(...args), wait);}}
